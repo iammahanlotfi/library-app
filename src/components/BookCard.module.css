@@ -22,7 +22,6 @@
 .info span { 
     margin-right: 20px;
     font-size: 0.85rem;
-    color: #959595;
 }
 
 .card button { 
@@ -35,4 +34,8 @@
 }
 .card button:hover { 
     transform: scale(1.2);
+}
+
+.light  { 
+    background-color: #96b5ee;
 }

@@ -9,7 +9,6 @@
 }
 
 .header span { 
-    color: #6552f4;
     font-weight: 600;
     font-size: 1.1rem;
 }
@@ -23,3 +22,20 @@
 }
 
 
+.light { 
+    
+    background-color: #96b5ee;
+}
+
+.moodBTN { 
+    height: fit-content;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.moodBTN:hover { 
+    transform: scale(1.2);  
+}

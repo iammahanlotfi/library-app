@@ -3,7 +3,7 @@ import { FaHeart } from "react-icons/fa"
 
 import styles from "./BookCard.module.css"
 
-function BookCard({data ,handleLikeList}) {
+function BookCard({data ,handleLikeList , mood}) {
   
   const {title , author , image , language , pages} = data ; 
 
@@ -15,7 +15,7 @@ function BookCard({data ,handleLikeList}) {
   }
 
   return (
-    <div className={styles.card} >
+    <div className= {` ${styles.card} ${mood ? styles.light : ""}`} >
 
         <img src={image} alt={title} />
         <div className= {styles.info} >
@@ -23,7 +23,7 @@ function BookCard({data ,handleLikeList}) {
             <h3>{title}</h3>
             <p>{author}</p>
             <div>
-            <span>{language}</span>
+            <span style={mood ? {color : "#1e1e1e"} : {color: "#959595"}} >{language}</span>
             <span>{pages} pages</span>
             </div>
         </div>

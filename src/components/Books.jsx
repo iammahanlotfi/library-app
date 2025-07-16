@@ -6,7 +6,7 @@ import SideCard from "./SideCard.jsx";
 import SearchBox from "./SearchBox.jsx";
 import styles from "./Books.module.css" 
 
-function Books() {
+function Books({mood}) {
 
   const [books , setBooks] = useState(bookData) ; 
 
@@ -35,16 +35,16 @@ function Books() {
 
   return (
     <>
-    <SearchBox search = {search} setSearch = {setSearch} searchHandler = {searchHandler} />
+    <SearchBox search = {search} setSearch = {setSearch} searchHandler = {searchHandler} mood = {mood} />
     <div  className = {styles.container} >
         <div className={styles.cards} >{books.map((book) => (
-            <BookCard key={book.id}  data = {book}  handleLikeList = {handleLikeList} />
+            <BookCard key={book.id}  data = {book}  handleLikeList = {handleLikeList} mood = {mood} />
         ))}
         </div>
     
-        {!!liked.length && (<div className={styles.favorite}>
+        {!!liked.length && (<div className={styles.favorite} style={mood ? {backgroundColor: "#96b5ee"} : {backgroundColor : "#6552f4"}} >
           <h4>Favorite</h4>
-          {liked.map((book) => (<SideCard key={book.id} data = {book} />))}</div>)}
+          {liked.map((book) => (<SideCard key={book.id} data = {book} mood = {mood}  />))}</div>)}
     </div>
 
     </>
